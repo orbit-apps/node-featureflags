@@ -28,6 +28,14 @@ To query a single flag for a user, use `isEnabled`:
 ```js
 const { isEnabled } = require("node-featureflags");
 
+const user = {
+  key: "fancy-pants-store",
+  email: "hans@fancy-pants-store.com",
+  custom: {
+    groups: ["shop"]
+  }
+};
+
 const userGetsFeature = isEnabled("feature-something", user);
 ```
 
