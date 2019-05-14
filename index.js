@@ -1,13 +1,4 @@
-// @flow
-
 const LaunchDarkly = require("ldclient-node");
-
-import type {
-  LaunchDarklyStore,
-  FeatureFlagClient,
-  FeatureFlagUser,
-  FeatureFlagConfig
-} from "lib/types";
 
 let featureFlagClient;
 
@@ -30,7 +21,7 @@ const defaultConfig = {
   logger: console
 };
 
-function initialize(config: FeatureFlagConfig = {}) {
+function initialize(config = {}) {
   config = { ...defaultConfig, ...config };
 
   if (featureFlagClient) {
@@ -56,15 +47,13 @@ function initialize(config: FeatureFlagConfig = {}) {
   return featureFlagClient;
 }
 
-function isEnabled(flag: string, user: FeatureFlagUser): Promise<boolean> {
+function isEnabled(flag, user) {
   return featureFlagClient.variation(flag, user, false);
 }
 
-async function getAllFlags(user: FeatureFlagUser): Promise<Object> {
+async function getAllFlags(user) {
   try {
-    const rawFlags: LaunchDarklyStore = await featureFlagClient.allFlagsState(
-      user
-    );
+    const rawFlags = await featureFlagClient.allFlagsState(user);
     return rawFlags.allValues();
   } catch (error) {
     console.warn(`[FeatureFlags] Error retrieving allFlagsState ${error}`);
