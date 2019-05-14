@@ -16,7 +16,7 @@ const clientStub = {
     allValues: () => ({})
   }),
   variation: function(flag, user, value) {
-    return Promise.resolve(true);
+    return Promise.resolve(false);
   },
   once: function(_, func) {
     func();
