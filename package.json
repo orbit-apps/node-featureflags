@@ -15,7 +15,7 @@
     "url": "git+https://github.com/pixelunion/node-featureflags.git"
   },
   "author": "",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/pixelunion/node-featureflags/issues"
   },
