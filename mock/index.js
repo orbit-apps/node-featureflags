@@ -30,6 +30,7 @@ function getAllFlags() {
 }
 
 module.exports = {
+  initialize,
   isEnabled,
   forceFlag,
   reset
