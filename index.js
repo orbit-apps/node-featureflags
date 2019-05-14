@@ -60,7 +60,7 @@ function isEnabled(flag: string, user: FeatureFlagUser): Promise<boolean> {
   return featureFlagClient.variation(flag, user, false);
 }
 
-async function getAllFlags(user: FeatureFlagUser): Object {
+async function getAllFlags(user: FeatureFlagUser): Promise<Object> {
   try {
     const rawFlags: LaunchDarklyStore = await featureFlagClient.allFlagsState(
       user
