@@ -36,7 +36,7 @@ const user = {
   }
 };
 
-const userGetsFeature = isEnabled("feature-something", user);
+const userGetsFeature = await isEnabled("feature-something", user);
 ```
 
 ### Querying all flags
@@ -46,7 +46,7 @@ To get an object of all flags for a user and their values, use `getAllFlags`:
 ```js
 const { getAllFlags } = require("node-featureflags");
 
-const flagsForUser = getAllFlags(user);
+const flagsForUser = await getAllFlags(user);
 
 /*
   {
@@ -59,6 +59,9 @@ const flagsForUser = getAllFlags(user);
 The `user` argument in both cases should match the shape of LaumchDarkly's user
 object,
 [documented here](https://docs.launchdarkly.com/docs/node-sdk-reference#section-users).
+
+Both `isEnabled` and `getAllFlags` return promises, and should be called with
+`await`.
 
 ## Mocking
 
