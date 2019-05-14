@@ -1,5 +1,3 @@
-//
-
 function setFlagDefaults(flags = {}) {
   const flagNames = Object.values(flags);
 

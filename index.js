@@ -1,5 +1,3 @@
-//
-
 const LaunchDarkly = require("ldclient-node");
 
 let featureFlagClient;
