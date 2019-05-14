@@ -1,0 +1,26 @@
+{
+  "name": "node-featureflags",
+  "version": "1.0.0",
+  "description": "A simple wrapper library for accessing feature flags from LaunchDarkly",
+  "main": "index.js",
+  "engines": {
+    "node": "10.7.x",
+    "yarn": "^1.12.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelunion/node-featureflags.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/pixelunion/node-featureflags/issues"
+  },
+  "homepage": "https://github.com/pixelunion/node-featureflags#readme",
+  "dependencies": {
+    "ldclient-node": "^5.8.0"
+  }
+}
