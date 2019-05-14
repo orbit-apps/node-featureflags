@@ -1,10 +1,6 @@
-// @flow
+//
 
-function setFlagDefaults(
-  flags?: {
-    [flagKey: string]: string
-  } = {}
-): { [flag: string]: false } {
+function setFlagDefaults(flags = {}) {
   const flagNames = Object.values(flags);
 
   return flagNames.reduce((acc, flag) => {
@@ -15,7 +11,7 @@ function setFlagDefaults(
 
 let flagStore = setFlagDefaults();
 
-function forceFlag(flag: string, value: any): void {
+function forceFlag(flag, value) {
   flagStore[flag] = value;
 }
 
@@ -23,11 +19,11 @@ function initialize() {
   return true;
 }
 
-function reset(flags): void {
+function reset(flags) {
   flagStore = setFlagDefaults(flags);
 }
 
-function isEnabled(flag: string): any {
+function isEnabled(flag) {
   return flagStore[flag];
 }
 
