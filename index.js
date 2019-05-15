@@ -70,5 +70,6 @@ process.on("SIGTERM", shutDown);
 
 module.exports = {
   initialize,
-  isEnabled
+  isEnabled,
+  getAllFlags
 };
