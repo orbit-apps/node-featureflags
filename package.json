@@ -4,8 +4,7 @@
   "description": "A simple wrapper library for accessing feature flags from LaunchDarkly",
   "main": "index.js",
   "engines": {
-    "node": "10.7.x",
-    "yarn": "^1.12.0"
+    "node": "10.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
