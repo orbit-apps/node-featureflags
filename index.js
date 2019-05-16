@@ -35,7 +35,11 @@ function initialize(config = {}) {
   if (launchDarklySDK) {
     featureFlagClient = LaunchDarkly.init(launchDarklySDK, config);
 
-    return featureFlagClient;
+    return new Promise((resolve) => {
+      featureFlagClient.once("ready", () => {
+        resolve(featureFlagClient);
+      }) 
+    })
   } else {
     featureFlagClient = clientStub;
 
