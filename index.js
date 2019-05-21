@@ -47,6 +47,10 @@ function initialize(config = {}) {
   return featureFlagClient;
 }
 
+function flush() {
+  return featureFlagClient.flush();
+}
+
 function isEnabled(flag, user) {
   return featureFlagClient.variation(flag, user, false);
 }
@@ -70,6 +74,7 @@ process.on("SIGTERM", shutDown);
 
 module.exports = {
   initialize,
+  flush,
   isEnabled,
   getAllFlags
 };
