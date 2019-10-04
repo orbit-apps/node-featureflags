@@ -17,6 +17,10 @@ function initialize() {
   return true;
 }
 
+function flush() {
+  return true;
+}
+
 function reset(flags) {
   flagStore = setFlagDefaults(flags);
 }
@@ -30,9 +34,12 @@ function getAllFlags() {
 }
 
 module.exports = {
+  flush,
+  getAllFlags
   initialize,
   isEnabled,
-  getAllFlags,
+
+  // mock-only exports
   forceFlag,
   reset
 };
