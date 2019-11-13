@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/pixelunion/node-featureflags#readme",
   "dependencies": {
-    "ldclient-node": "^5.8.0"
+    "launchdarkly-node-server-sdk": "^5.9.2"
   }
 }
