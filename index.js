@@ -14,7 +14,8 @@ const clientStub = {
   },
   close: function() {
     return false;
-  }
+  },
+  flush: function () {}
 };
 
 const defaultConfig = {
